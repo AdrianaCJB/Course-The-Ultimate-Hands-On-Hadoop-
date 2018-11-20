@@ -1,0 +1,16 @@
+-->	su root
+-->	yum install phoenix
+-->	cd /usr/hdp/current/phoenix-client/bin
+-->	python sqlline.py
+
+jdbc:phoenix:> !tables
+
+
+Para crear e insertar en Phoenix: 
+
+ 
+CREATE TABLE IF NOT EXISTS (….); 
+
+UPSERT INTO XXXX VALUES (….); 
+
+ 
