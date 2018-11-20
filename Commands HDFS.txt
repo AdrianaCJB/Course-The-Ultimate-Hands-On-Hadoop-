@@ -1,0 +1,32 @@
+su root - password: hadoopmaria
+admin - password: hadoop
+
+
+#Todas las opciones en HDFS   ---> hadoop fs
+
+#Lee carpeta en HDFS   ---> hadoop fs -ls  
+
+#Crea carpeta en HDFS ---> hadoop fs -mkdir carpeta
+  ejemplo:  hadoop fs -mkdir ml-100k
+
+#Descarga un archivo  ---> wget ruta_del_archivo 
+  ejemplo:  wget http://media.sundog-soft.com/hadoop/ml-100k/u.data
+
+#Mover el archivo a HDFS  ---> hadoop fs -copyFromLocal archivo carpeta/archivo
+  ejemplo:  hadoop fs -copyFromLocal u.data ml-100k/u.data
+ 
+#Enviar archivo a la basura  ---> hadoop fs -rm carpeta/archivo
+  ejemplo:  hadoop fs -rm  ml-100k/u.data
+  
+#Enviar carpeta a la basura  ---> hadoop fs -rmdir carpeta
+  ejemplo:  hadoop fs -rmdir ml-100k
+  
+  
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+/ ************** INSTALLING PYTHON 2.7 *******************/
+
+
+# Cassandra requiere python 2.7
+
+# todo se ejecuta con su root y como sudo 
+
+python -V   # Check python version
+
+yum update # Update packages
+
+# It's a software collection that give me the ability to switch between python versions
+
+yum install scl-utils 
+yum install centos-release-scl-rh
+yum install python27
+
+# Switch to python 2.7
+
+scl enable python27 bash
+
+
+/ ************** INSTALLING CASSANDRA *******************/
+
+# Repository to pick up the Cassandra packages
+
+cd /etc/yum.repos.d
+
+# Create a new file that has information about the DataStax repository, which is where it's going to find the resources for Cassandra
+
+vi datastax.repo 
+
+# After open the file, write the follow:
+
+		[datastax]
+		name = DataStax Repo for Apache Cassandra
+		baseurl = http://rpm.datastax.com/community
+		enabled = 1
+		gpgcheck = 0
+
+	# Exit the file
+	
+		ESC:wq 
+
+# To open the file created		
+cat datastax.repo	
+
+# 
+yum install dsc30
+
+
+
+# interact with Cassandra is through a command-line tool called CQL Shell (cqlsh)
+pip install cqlsh
+
+
+service cassandra start
+cqlsh
+cqlsh --cqlversion="3.4.0"
+
+
+CREATE KEYSPACE movielens WITH replication = {'class': 'SimpleStrategy', 'replication_factor':'1'} AND durable_writes = true; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
